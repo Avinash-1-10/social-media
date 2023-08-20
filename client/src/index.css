@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  margin: 0;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s;
+}
+
+.buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.buttons button {
+  background-color: white;
+  color: black;
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: black;
+  color: white;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card:hover .buttons {
+  opacity: 1;
+}
+
+.color{
+  color: black;
+}
+
+
+/* Css for loading products */
+
+/* Add this CSS to your existing CSS file or create a new one */
+.skeleton-card {
+  min-width: 250px;
+  min-height: 320px;
+  background-color: #8d8c8c;
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
